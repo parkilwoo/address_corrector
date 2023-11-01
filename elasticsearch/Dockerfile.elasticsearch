@@ -1,0 +1,16 @@
+FROM docker.elastic.co/elasticsearch/elasticsearch:8.7.0
+
+USER root
+
+RUN apt-get -qq update
+RUN apt-get -y -qq install jq
+
+USER 1000
+
+RUN bin/elasticsearch-plugin install analysis-nori
+RUN bin/elasticsearch-plugin install analysis-icu
+
+COPY --chown=1000:1000 ./addr_backup /usr/share/elasticsearch/addr_backup
+
+COPY --chown=1000:1000 ./restore.sh /usr/share/elasticsearch/restore.sh
+
