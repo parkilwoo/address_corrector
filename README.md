@@ -18,4 +18,4 @@
 
 > download resotre data
 
-Download [restore](http://naver.me/5lx77SAA)
+Download [restore](http://naver.me/5fPIIbnt)
